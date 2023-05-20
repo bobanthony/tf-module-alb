@@ -55,3 +55,10 @@ resource "aws_security_group" "main" {
     { Name = "${var.name}-${var.env}-lb" }
   )
 }
+
+
+resource "aws_alb" "l3" {
+  name = "l3"
+  load_balancer_type = "l3"
+  enable_deletion_protection = var.enable_deletion_protection
+}
